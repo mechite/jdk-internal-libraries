@@ -1,0 +1,26 @@
+jdk internals
+=============
+
+This repository provides a system for building modules from inside of OpenJDK,
+which have no external dependencies and are usually protected, but useful APIs
+outside the context of the JDK itself.
+
+module-info.java =====================================
+requires com.mechite.jimage; // add the desired module
+======================================================
+
+pom.xml ========================================
+<repository>
+	<id>jitpack.io</id>
+	<url>https://jitpack.io</url>
+</repository>
+
+<dependency>
+	<groupId>com.mechite</groupId>
+
+	<!-- add the desired module -->
+	<artifactId>jdk-internal-jimage</artifactId>
+
+	<version>1.0-RC1</version>
+</dependency>
+================================================
